@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Livros</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Meus Livros</h1>
+            <p>Gerencie sua biblioteca pessoal e consulte obras via Open Library</p>
+        </header>
+
+        <main>
+            <!-- Seção de Cadastro / Edição -->
+            <section class="card form-section">
+                <h2 id="form-title">Cadastrar Novo Livro</h2>
+                <form id="livro-form">
+                    <input type="hidden" id="livro-id">
+                    
+                    <div class="input-group">
+                        <label for="titulo">Título *</label>
+                        <div class="search-wrapper">
+                            <input type="text" id="titulo" required placeholder="Digite o título...">
+                            <button type="button" id="btn-buscar-api">Buscar na Open Library</button>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="autor">Autor *</label>
+                            <input type="text" id="autor" required placeholder="Nome do autor">
+                        </div>
+                        <div class="input-group">
+                            <label for="isbn">ISBN</label>
+                            <input type="text" id="isbn" placeholder="Ex: 9788535902778">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="ano">Ano de Publicação</label>
+                            <input type="number" id="ano" placeholder="Ex: 2020">
+                        </div>
+                        <div class="input-group">
+                            <label for="status">Status de Leitura</label>
+                            <select id="status">
+                                <option value="Quero ler">Quero ler</option>
+                                <option value="Lendo">Lendo</option>
+                                <option value="Concluído">Concluído</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="capa">URL da Capa</label>
+                        <input type="url" id="capa" placeholder="https://...">
+                    </div>
+
+                    <div class="btn-group">
+                        <button type="submit" id="btn-salvar" class="btn-primary">Salvar Livro</button>
+                        <button type="button" id="btn-cancelar" class="btn-secondary" style="display:none;">Cancelar</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Seção de Listagem e Filtro -->
+            <section class="list-section">
+                <div class="list-header">
+                    <h2>Lista de Livros</h2>
+                    <input type="text" id="filtro-busca" placeholder="Filtrar livros na lista...">
+                </div>
+                <div id="livros-container" class="livros-grid">
+                    <!-- Os cards dos livros serão injetados aqui via JS -->
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

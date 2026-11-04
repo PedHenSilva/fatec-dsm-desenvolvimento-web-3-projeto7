@@ -1,0 +1,12 @@
+{
+  "name": "gerenciamento-livros",
+  "version": "1.0.0",
+  "description": "Sistema de gerenciamento de livros com Node.js puro e Open Library API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
